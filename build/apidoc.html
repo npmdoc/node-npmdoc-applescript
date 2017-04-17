@@ -1,0 +1,989 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >applescript (v1.0.0)</a>
+</h1>
+<h4>Easily execute arbitrary AppleScript code on OS X through NodeJS.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript">module applescript</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.AliasParser">
+            function <span class="apidocSignatureSpan">applescript.</span>Parsers.AliasParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.ArrayParser">
+            function <span class="apidocSignatureSpan">applescript.</span>Parsers.ArrayParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.DataParser">
+            function <span class="apidocSignatureSpan">applescript.</span>Parsers.DataParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.NumberParser">
+            function <span class="apidocSignatureSpan">applescript.</span>Parsers.NumberParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.StringParser">
+            function <span class="apidocSignatureSpan">applescript.</span>Parsers.StringParser
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.UndefinedParser">
+            function <span class="apidocSignatureSpan">applescript.</span>Parsers.UndefinedParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.parse">
+            function <span class="apidocSignatureSpan">applescript.</span>Parsers.parse
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.execFile">
+            function <span class="apidocSignatureSpan">applescript.</span>execFile
+            <span class="apidocSignatureSpan">(file, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.execString">
+            function <span class="apidocSignatureSpan">applescript.</span>execString
+            <span class="apidocSignatureSpan">(str, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">applescript.</span>Parsers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">applescript.</span>osascript</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.Parsers">module applescript.Parsers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.AliasParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>AliasParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.ArrayParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>ArrayParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.DataParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>DataParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.NumberParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>NumberParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.StringParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>StringParser
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.UndefinedParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>UndefinedParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.parse">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>parse
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.Parsers.AliasParser">module applescript.Parsers.AliasParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.AliasParser.AliasParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>AliasParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.Parsers.ArrayParser">module applescript.Parsers.ArrayParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.ArrayParser.ArrayParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>ArrayParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.Parsers.DataParser">module applescript.Parsers.DataParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.DataParser.DataParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>DataParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.Parsers.NumberParser">module applescript.Parsers.NumberParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.NumberParser.NumberParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>NumberParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.Parsers.StringParser">module applescript.Parsers.StringParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.StringParser.StringParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>StringParser
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.Parsers.UndefinedParser">module applescript.Parsers.UndefinedParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.UndefinedParser.UndefinedParser">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>UndefinedParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.Parsers.parse">module applescript.Parsers.parse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.Parsers.parse.parse">
+            function <span class="apidocSignatureSpan">applescript.Parsers.</span>parse
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.execFile">module applescript.execFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.execFile.execFile">
+            function <span class="apidocSignatureSpan">applescript.</span>execFile
+            <span class="apidocSignatureSpan">(file, args, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.applescript.execString">module applescript.execString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.applescript.execString.execString">
+            function <span class="apidocSignatureSpan">applescript.</span>execString
+            <span class="apidocSignatureSpan">(str, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript" id="apidoc.module.applescript">module applescript</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.AliasParser" id="apidoc.element.applescript.Parsers.AliasParser">
+        function <span class="apidocSignatureSpan">applescript.</span>Parsers.AliasParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Parsers.AliasParser = function () {
+  this.index += 6;
+  return &#x22;/Volumes/&#x22; + exports.StringParser.call(this).replace(/:/g, &#x22;/&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.ArrayParser" id="apidoc.element.applescript.Parsers.ArrayParser">
+        function <span class="apidocSignatureSpan">applescript.</span>Parsers.ArrayParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Parsers.ArrayParser = function () {
+  var rtn = [],
+    cur = this.value[++this.index];
+  while (cur != &#x27;}&#x27;) {
+    rtn.push(parseFromFirstRemaining.call(this));
+    if (this.value[this.index] == &#x27;,&#x27;) this.index += 2;
+    cur = this.value[this.index];
+  }
+  this.index++;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.DataParser" id="apidoc.element.applescript.Parsers.DataParser">
+        function <span class="apidocSignatureSpan">applescript.</span>Parsers.DataParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Parsers.DataParser = function () {
+  var body = exports.UndefinedParser.call(this);
+  body = body.substring(6, body.length-1);
+  var type = body.substring(0,4);
+  body = body.substring(4, body.length);
+  var buf = new Buffer(body.length/2);
+  var count = 0;
+  for (var i=0, l=body.length; i&#x3c;l; i += 2) {
+    buf[count++] = parseInt(body[i]+body[i+1], 16);
+  }
+  buf.type = type;
+  return buf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.NumberParser" id="apidoc.element.applescript.Parsers.NumberParser">
+        function <span class="apidocSignatureSpan">applescript.</span>Parsers.NumberParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Parsers.NumberParser = function () {
+  return Number(exports.UndefinedParser.call(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.StringParser" id="apidoc.element.applescript.Parsers.StringParser">
+        function <span class="apidocSignatureSpan">applescript.</span>Parsers.StringParser
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Parsers.StringParser = function (str) {
+  var rtn = &#x22;&#x22;,
+    end = ++this.index,
+    cur = this.value[end++];
+  while(cur != &#x27;&#x22;&#x27;) {
+    if (cur == &#x27;\\&#x27;) {
+      rtn += this.value.substring(this.index, end-1);
+      this.index = end++;
+    }
+    cur = this.value[end++];
+  }
+  rtn += this.value.substring(this.index, end-1);
+  this.index = end;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.UndefinedParser" id="apidoc.element.applescript.Parsers.UndefinedParser">
+        function <span class="apidocSignatureSpan">applescript.</span>Parsers.UndefinedParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Parsers.UndefinedParser = function () {
+  var end = this.index, cur = this.value[end++];
+  while (!END_OF_TOKEN.test(cur)) {
+    cur = this.value[end++];
+  }
+  var rtn = this.value.substring(this.index, end-1);
+  this.index = end-1;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.parse" id="apidoc.element.applescript.Parsers.parse">
+        function <span class="apidocSignatureSpan">applescript.</span>Parsers.parse
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Parsers.parse = function (str) {
+  if (str.length == 0) {
+    return;
+  }
+
+  var rtn = parseFromFirstRemaining.call({
+    value: str,
+    index: 0
+  });
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.execFile" id="apidoc.element.applescript.execFile">
+        function <span class="apidocSignatureSpan">applescript.</span>execFile
+        <span class="apidocSignatureSpan">(file, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function execFile(file, args, callback) {
+  if (!Array.isArray(args)) {
+    callback = args;
+    args = [];
+  }
+  return runApplescript(file, args, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+fs.readdirSync(__dirname).filter(function(file) {
+  return path.extname(file) == &#x27;.applescript&#x27;;
+}).forEach(function(file) {
+  console.error(&#x22;        &#x22; + file);
+});
+} else {
+console.error(&#x27;Executing &#x22;&#x27; + process.argv[2] + &#x27;&#x22;&#x27;);
+applescript.<span class="apidocCodeKeywordSpan">execFile</span>(process.argv[2], process.argv.slice(3), function(err, rtn) {
+  console.error(&#x27;    DONE!\n&#x27;);
+  if (err) {
+    // Something went wrong!
+    console.error(&#x22;EXIT CODE: &#x22; + err.exitCode);
+    console.error(err);
+  } else {
+    // If we got here, then there&#x27;s probably some worthy content.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.execString" id="apidoc.element.applescript.execString">
+        function <span class="apidocSignatureSpan">applescript.</span>execString
+        <span class="apidocSignatureSpan">(str, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function execString(str, callback) {
+  return runApplescript(str, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` js
+var applescript = require(&#x27;applescript&#x27;);
+
+// Very basic AppleScript command. Returns the song name of each
+// currently selected track in iTunes as an &#x27;Array&#x27; of &#x27;String&#x27;s.
+var script = &#x27;tell application &#x22;iTunes&#x22; to get name of selection&#x27;;
+
+applescript.<span class="apidocCodeKeywordSpan">execString</span>(script, function(err, rtn) {
+if (err) {
+  // Something went wrong!
+}
+if (Array.isArray(rtn)) {
+  rtn.forEach(function(songName) {
+    console.log(songName);
+  });
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.Parsers" id="apidoc.module.applescript.Parsers">module applescript.Parsers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.AliasParser" id="apidoc.element.applescript.Parsers.AliasParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>AliasParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">AliasParser = function () {
+  this.index += 6;
+  return &#x22;/Volumes/&#x22; + exports.StringParser.call(this).replace(/:/g, &#x22;/&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.ArrayParser" id="apidoc.element.applescript.Parsers.ArrayParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>ArrayParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ArrayParser = function () {
+  var rtn = [],
+    cur = this.value[++this.index];
+  while (cur != &#x27;}&#x27;) {
+    rtn.push(parseFromFirstRemaining.call(this));
+    if (this.value[this.index] == &#x27;,&#x27;) this.index += 2;
+    cur = this.value[this.index];
+  }
+  this.index++;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.DataParser" id="apidoc.element.applescript.Parsers.DataParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>DataParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DataParser = function () {
+  var body = exports.UndefinedParser.call(this);
+  body = body.substring(6, body.length-1);
+  var type = body.substring(0,4);
+  body = body.substring(4, body.length);
+  var buf = new Buffer(body.length/2);
+  var count = 0;
+  for (var i=0, l=body.length; i&#x3c;l; i += 2) {
+    buf[count++] = parseInt(body[i]+body[i+1], 16);
+  }
+  buf.type = type;
+  return buf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.NumberParser" id="apidoc.element.applescript.Parsers.NumberParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>NumberParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NumberParser = function () {
+  return Number(exports.UndefinedParser.call(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.StringParser" id="apidoc.element.applescript.Parsers.StringParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>StringParser
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StringParser = function (str) {
+  var rtn = &#x22;&#x22;,
+    end = ++this.index,
+    cur = this.value[end++];
+  while(cur != &#x27;&#x22;&#x27;) {
+    if (cur == &#x27;\\&#x27;) {
+      rtn += this.value.substring(this.index, end-1);
+      this.index = end++;
+    }
+    cur = this.value[end++];
+  }
+  rtn += this.value.substring(this.index, end-1);
+  this.index = end;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.UndefinedParser" id="apidoc.element.applescript.Parsers.UndefinedParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>UndefinedParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UndefinedParser = function () {
+  var end = this.index, cur = this.value[end++];
+  while (!END_OF_TOKEN.test(cur)) {
+    cur = this.value[end++];
+  }
+  var rtn = this.value.substring(this.index, end-1);
+  this.index = end-1;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.parse" id="apidoc.element.applescript.Parsers.parse">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>parse
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (str) {
+  if (str.length == 0) {
+    return;
+  }
+
+  var rtn = parseFromFirstRemaining.call({
+    value: str,
+    index: 0
+  });
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.Parsers.AliasParser" id="apidoc.module.applescript.Parsers.AliasParser">module applescript.Parsers.AliasParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.AliasParser.AliasParser" id="apidoc.element.applescript.Parsers.AliasParser.AliasParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>AliasParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">AliasParser = function () {
+  this.index += 6;
+  return &#x22;/Volumes/&#x22; + exports.StringParser.call(this).replace(/:/g, &#x22;/&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.Parsers.ArrayParser" id="apidoc.module.applescript.Parsers.ArrayParser">module applescript.Parsers.ArrayParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.ArrayParser.ArrayParser" id="apidoc.element.applescript.Parsers.ArrayParser.ArrayParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>ArrayParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ArrayParser = function () {
+  var rtn = [],
+    cur = this.value[++this.index];
+  while (cur != &#x27;}&#x27;) {
+    rtn.push(parseFromFirstRemaining.call(this));
+    if (this.value[this.index] == &#x27;,&#x27;) this.index += 2;
+    cur = this.value[this.index];
+  }
+  this.index++;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.Parsers.DataParser" id="apidoc.module.applescript.Parsers.DataParser">module applescript.Parsers.DataParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.DataParser.DataParser" id="apidoc.element.applescript.Parsers.DataParser.DataParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>DataParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DataParser = function () {
+  var body = exports.UndefinedParser.call(this);
+  body = body.substring(6, body.length-1);
+  var type = body.substring(0,4);
+  body = body.substring(4, body.length);
+  var buf = new Buffer(body.length/2);
+  var count = 0;
+  for (var i=0, l=body.length; i&#x3c;l; i += 2) {
+    buf[count++] = parseInt(body[i]+body[i+1], 16);
+  }
+  buf.type = type;
+  return buf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.Parsers.NumberParser" id="apidoc.module.applescript.Parsers.NumberParser">module applescript.Parsers.NumberParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.NumberParser.NumberParser" id="apidoc.element.applescript.Parsers.NumberParser.NumberParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>NumberParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NumberParser = function () {
+  return Number(exports.UndefinedParser.call(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.Parsers.StringParser" id="apidoc.module.applescript.Parsers.StringParser">module applescript.Parsers.StringParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.StringParser.StringParser" id="apidoc.element.applescript.Parsers.StringParser.StringParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>StringParser
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StringParser = function (str) {
+  var rtn = &#x22;&#x22;,
+    end = ++this.index,
+    cur = this.value[end++];
+  while(cur != &#x27;&#x22;&#x27;) {
+    if (cur == &#x27;\\&#x27;) {
+      rtn += this.value.substring(this.index, end-1);
+      this.index = end++;
+    }
+    cur = this.value[end++];
+  }
+  rtn += this.value.substring(this.index, end-1);
+  this.index = end;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.Parsers.UndefinedParser" id="apidoc.module.applescript.Parsers.UndefinedParser">module applescript.Parsers.UndefinedParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.UndefinedParser.UndefinedParser" id="apidoc.element.applescript.Parsers.UndefinedParser.UndefinedParser">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>UndefinedParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UndefinedParser = function () {
+  var end = this.index, cur = this.value[end++];
+  while (!END_OF_TOKEN.test(cur)) {
+    cur = this.value[end++];
+  }
+  var rtn = this.value.substring(this.index, end-1);
+  this.index = end-1;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.Parsers.parse" id="apidoc.module.applescript.Parsers.parse">module applescript.Parsers.parse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.Parsers.parse.parse" id="apidoc.element.applescript.Parsers.parse.parse">
+        function <span class="apidocSignatureSpan">applescript.Parsers.</span>parse
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (str) {
+  if (str.length == 0) {
+    return;
+  }
+
+  var rtn = parseFromFirstRemaining.call({
+    value: str,
+    index: 0
+  });
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.execFile" id="apidoc.module.applescript.execFile">module applescript.execFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.execFile.execFile" id="apidoc.element.applescript.execFile.execFile">
+        function <span class="apidocSignatureSpan">applescript.</span>execFile
+        <span class="apidocSignatureSpan">(file, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function execFile(file, args, callback) {
+  if (!Array.isArray(args)) {
+    callback = args;
+    args = [];
+  }
+  return runApplescript(file, args, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+fs.readdirSync(__dirname).filter(function(file) {
+  return path.extname(file) == &#x27;.applescript&#x27;;
+}).forEach(function(file) {
+  console.error(&#x22;        &#x22; + file);
+});
+} else {
+console.error(&#x27;Executing &#x22;&#x27; + process.argv[2] + &#x27;&#x22;&#x27;);
+applescript.<span class="apidocCodeKeywordSpan">execFile</span>(process.argv[2], process.argv.slice(3), function(err, rtn) {
+  console.error(&#x27;    DONE!\n&#x27;);
+  if (err) {
+    // Something went wrong!
+    console.error(&#x22;EXIT CODE: &#x22; + err.exitCode);
+    console.error(err);
+  } else {
+    // If we got here, then there&#x27;s probably some worthy content.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.applescript.execString" id="apidoc.module.applescript.execString">module applescript.execString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.applescript.execString.execString" id="apidoc.element.applescript.execString.execString">
+        function <span class="apidocSignatureSpan">applescript.</span>execString
+        <span class="apidocSignatureSpan">(str, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function execString(str, callback) {
+  return runApplescript(str, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` js
+var applescript = require(&#x27;applescript&#x27;);
+
+// Very basic AppleScript command. Returns the song name of each
+// currently selected track in iTunes as an &#x27;Array&#x27; of &#x27;String&#x27;s.
+var script = &#x27;tell application &#x22;iTunes&#x22; to get name of selection&#x27;;
+
+applescript.<span class="apidocCodeKeywordSpan">execString</span>(script, function(err, rtn) {
+if (err) {
+  // Something went wrong!
+}
+if (Array.isArray(rtn)) {
+  rtn.forEach(function(songName) {
+    console.log(songName);
+  });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
