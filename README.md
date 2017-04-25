@@ -1,4 +1,7 @@
-# api documentation for  applescript (v1.0.0)  [![npm package](https://img.shields.io/npm/v/npmdoc-applescript.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-applescript) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-applescript.svg)](https://travis-ci.org/npmdoc/node-npmdoc-applescript)
+# npmdoc-applescript
+
+#### basic api documentation for  applescript (v1.0.0)  [![npm package](https://img.shields.io/npm/v/npmdoc-applescript.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-applescript) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-applescript.svg)](https://travis-ci.org/npmdoc/node-npmdoc-applescript)
+
 #### Easily execute arbitrary AppleScript code on OS X through NodeJS.
 
 [![NPM](https://nodei.co/npm/applescript.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/applescript)
@@ -47,7 +50,8 @@
     "name": "applescript",
     "optionalDependencies": {},
     "scripts": {},
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "bin": {}
 }
 ```
 

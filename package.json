@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "api documentation for applescript (v1.0.0) [![npm package](https://img.shields.io/npm/v/npmdoc-applescript.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-applescript) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-applescript.svg)](https://travis-ci.org/npmdoc/node-npmdoc-applescript)",
+    "description": "#### basic api documentation for  applescript (v1.0.0)  [![npm package](https://img.shields.io/npm/v/npmdoc-applescript.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-applescript) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-applescript.svg)](https://travis-ci.org/npmdoc/node-npmdoc-applescript)",
     "devDependencies": {
         "applescript": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
